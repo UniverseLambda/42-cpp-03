@@ -26,6 +26,9 @@
 *.a
 *.lib
 
+# VSCode
+.vscode/
+
 # Executables
 *.exe
 *.out
@@ -33,3 +36,4 @@
 
 ex00/clap
 ex01/scav
+ex02/frag
