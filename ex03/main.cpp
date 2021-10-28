@@ -1,6 +1,7 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 #include <iostream>
 
@@ -128,9 +129,57 @@ void testFragTrap() {
 	ct2.highFivesGuys();
 }
 
+void testDiamondTrap() {
+	std::cout << "============================== DIAMOND TRAP TESTS ==============================" << std::endl;
+
+	DiamondTrap ct("Chock Nurris");
+	DiamondTrap ct2(ct);
+
+	ct.attack("Breece Lu");
+	ct.attack("Breece Lu");
+	ct.attack("Breece Lu");
+	ct.attack("Breece Lu");
+	ct.attack("Breece Lu");
+	ct.attack("John Cena");
+	ct.attack("Breece Lu");
+	ct.attack("Breece Lu");
+	ct.attack("Breece Lu");
+	ct.attack("Breece Lu");
+	ct.attack("Breece Lu");
+
+	ct.takeDamage(10);
+	ct.beRepaired(10);
+	ct.takeDamage(20);
+	ct.beRepaired(200);
+
+	ct.attack("Breece Lu");
+	ct.attack("John Cena");
+
+	ct = DiamondTrap("Chick Norrus");
+
+	ct.takeDamage(10);
+	ct.beRepaired(10);
+	ct.takeDamage(20);
+	ct.beRepaired(200);
+
+	ct.attack("Breece Lu");
+	ct.attack("John Cena");
+
+	ct2.attack("Chick Norrus");
+
+	ct.highFivesGuys();
+	ct.guardGuate();
+	ct2.highFivesGuys();
+	ct2.guardGuate();
+
+	ct.whoAmI();
+	ct2.whoAmI();
+}
+
 int main(void) {
 	testClapTrap();
 	testScavTrap();
 	testFragTrap();
+	testDiamondTrap();
 	return 0;
 }
