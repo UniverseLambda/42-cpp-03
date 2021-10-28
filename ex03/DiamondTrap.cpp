@@ -9,12 +9,6 @@ DiamondTrap::DiamondTrap(std::string name):
 	mHitpoints = FragTrap::mHitpoints;
 	mEnergyPoints = ScavTrap::mEnergyPoints;
 	mAttackDamage = FragTrap::mAttackDamage;
-	std::cout << "##############################################################" << std::endl;
-	std::cout << "mName: " << mName << std::endl;
-	std::cout << "mHitpoints: " << mHitpoints << std::endl;
-	std::cout << "mEnergyPoints: " << mEnergyPoints << std::endl;
-	std::cout << "mAttackDamage: " << mAttackDamage << std::endl;
-	std::cout << "##############################################################" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &cpy):
@@ -29,6 +23,8 @@ DiamondTrap::~DiamondTrap() {
 
 
 DiamondTrap &DiamondTrap::operator=(const DiamondTrap &rhs) {
+	std::cout << mName << " (DiamondTrap) has been copied by operator!" << std::endl;
+
 	ClapTrap::operator=(rhs);
 	FragTrap::operator=(rhs);
 	ScavTrap::operator=(rhs);
