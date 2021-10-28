@@ -7,6 +7,7 @@ ClapTrap::ClapTrap(std::string name):
 	mHitpoints(10),
 	mEnergyPoints(10),
 	mAttackDamage(0) {
+	std::cout << name << " (ClapTrap) has been constructed!" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &cpy):
@@ -14,9 +15,11 @@ ClapTrap::ClapTrap(const ClapTrap &cpy):
 	mHitpoints(cpy.mHitpoints),
 	mEnergyPoints(cpy.mEnergyPoints),
 	mAttackDamage(cpy.mAttackDamage) {
+	std::cout << cpy.mName << " (ClapTrap) has been copied!" << std::endl;
 }
 
 ClapTrap::~ClapTrap() {
+	std::cout << mName << " (ClapTrap) has been destructed!" << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &rhs) {
@@ -25,6 +28,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &rhs) {
 	mEnergyPoints = rhs.mEnergyPoints;
 	mAttackDamage = rhs.mAttackDamage;
 
+	std::cout << rhs.mName << " (ClapTrap) has been copied by operator!" << std::endl;
 	return *this;
 }
 
